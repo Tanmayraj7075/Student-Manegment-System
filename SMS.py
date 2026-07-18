@@ -8,7 +8,7 @@ import pandas as pd
 
 
 
-# Functionality Part
+# Functionality Part ---------------------------->
 
 # Common Code for Add, Search, and Update Student Functionality Start ----------->
 def toplevel_data(title, button_text, command):
@@ -77,7 +77,6 @@ def toplevel_data(title, button_text, command):
 
 
 # BOX - 4
-
 # Add Student Functionality Start ------->
 
 def add_data():
@@ -255,10 +254,6 @@ def connect_database():
             # HostName = localhost
             # UserName = root
             # Password = 8172
-            # this line use for write the host name, username, and also password
-            # con=pymysql.connect(host=hostEntry.get(), user=userEntry.get(), password=passwordEntry.get())
-
-            # when this line use don't need to write hostname and username, simply use password and connect the database
             con=pymysql.connect(host='localhost', user='root', password='8172')
             mycursor=con.cursor()
 
@@ -341,6 +336,7 @@ def connect_database():
 
 
 
+
 # 1st Box
 # Show of Date and Time
 def clock():
@@ -363,6 +359,11 @@ def slider():
     sliderLabel.config(text=text)
     count+=1
     sliderLabel.after(200,slider)
+
+
+
+
+# Main Code here ------------------------------------------------------>
 
 
 # GUI part

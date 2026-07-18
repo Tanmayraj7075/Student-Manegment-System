@@ -7,12 +7,12 @@ from PIL import Image, ImageTk
 # Code run karne ke liye terminal me "python login.py" likhna hoga
 
 
-# Login Function Call
+
 def login():
     if usernameEntry.get() == "" or passwordEntry.get() == "":
         messagebox.showerror("Error", "Please enter both username and password")
 
-    elif usernameEntry.get() == '8172' and passwordEntry.get() == '8172':
+    elif usernameEntry.get() == 'Tanmay' and passwordEntry.get() == '8172':
         # messagebox.showinfo("Success", "Welcome")
         window.destroy()
         import SMS
@@ -20,21 +20,19 @@ def login():
     else:
         messagebox.showerror('Error', 'Please enter correct information')
 
-
-# Window Import
 window = Tk()
 
 window.geometry('1530x790+0+0')
 window.title('Login of Student Management System')
 
+
+
 window.resizable(False, False)
-
-
 
 
 # Add BackGround Image
 # Image load and resize
-img = Image.open("bg.jpg")
+img = Image.open("bg.png")
 img = img.resize((1530, 790))
 
 Image = ImageTk.PhotoImage(img)  # convert PIL image to Compatible image
@@ -45,16 +43,28 @@ bg.place(x=0, y=0)
 
 
 
+
 # Add frame on Page
-loginFrame=Frame(window, bg="#ffffff")
-loginFrame.place(x=750, y=150)
+loginFrame = Frame(
+    window,
+    bg="#ffffff",
+    width=650,
+    height=500
+)
+# loginFrame.place(x=550, y=150)
+
+loginFrame.place(
+    x=470,
+    y=110,
+    width=600,
+    height=550
+)
 
 
 # Add Logo Image
 logoImage = PhotoImage(file='logo.png')
 logoLabel=Label(loginFrame, image=logoImage)
-logoLabel.grid(row=0, column=0, columnspan=2, pady=10)
-
+logoLabel.grid(row=0, column=0, columnspan=2, pady=30)
 
 
 # UserName --------------------------->
@@ -67,7 +77,7 @@ usernameLabel = Label(
     compound=LEFT,
     font=('times new roman', 20, 'bold'), bg='white'
 )
-usernameLabel.grid(row=1, column=0, pady=10, padx=10)
+usernameLabel.grid(row=1, column=0, pady=20, padx=20)
 
 # Column 2
 usernameEntry = Entry(
@@ -76,8 +86,7 @@ usernameEntry = Entry(
     bd=5,
     fg='royalblue'
 )
-usernameEntry.grid(row=1, column=1, pady=10, padx=10)
-
+usernameEntry.grid(row=1, column=1, pady=20, padx=20)
 
 
 
@@ -92,7 +101,7 @@ passwordLabel = Label(
     font=('times new roman', 20, 'bold'), 
     bg='white'
 )
-passwordLabel.grid(row=2, column=0, pady=10, padx=10)
+passwordLabel.grid(row=2, column=0, pady=20, padx=20)
 
 # Column 2
 passwordEntry = Entry(
@@ -101,8 +110,7 @@ passwordEntry = Entry(
     bd=5,
     fg='royalblue'
 )
-passwordEntry.grid(row=2, column=1, pady=10, padx=10)
-
+passwordEntry.grid(row=2, column=1, pady=20, padx=20)
 
 
 
@@ -119,8 +127,7 @@ loginButton=Button(
     cursor='hand2',
     command=login
 )
-loginButton.grid(row=3, column=0, columnspan=2, pady=10, padx=10)
+loginButton.grid(row=3, column=0, columnspan=2, pady=20, padx=20)
 
 
-# Show the window
 window.mainloop()
